@@ -1,11 +1,20 @@
+import { Route, Routes } from "react-router-dom"
+import AuthLayout from "./components/auth/AuthLayout"
 
 function App() {
   
 
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div className="flex flex-col overflow-hidden bg-white">
+      {/*Common Component*/}
+      <h2>Heder Component</h2>
+      <Routes>
+        <Route path="/auth" element={<AuthLayout />}>
+          <Route path="/login"/>
+          <Route path="/register"/>
+        </Route>
+      </Routes>
+    </div>
   )
 }
 
